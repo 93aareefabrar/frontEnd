@@ -1,0 +1,41 @@
+<div class="globalContent">
+    <main>
+    <div class="stripes">
+      <div class="stripe s1"></div>
+      <div class="stripe s2"></div>
+      <div class="stripe s3"></div>
+    </div>
+    <section class="container-lg">
+      <!--Example 1-->
+      <div class="cell example example1">
+        <form id="payment-form">
+            <fieldset>
+                <div class="row">
+                    <label for="example1-name" data-tid="elements_examples.form.name_label">Name</label>
+                    <input id="example1-name"  ng-model="user.name"data-tid="elements_examples.form.name_placeholder" type="text" placeholder="Jane Doe" required="">
+                </div>
+                <div class="row">
+                    <label for="example1-email" data-tid="elements_examples.form.email_label">Email</label>
+                    <input id="example1-email" ng-model="user.email" data-tid="elements_examples.form.email_placeholder" type="email" placeholder="janedoe@gmail.com"
+                        required="">
+                </div>
+                <div class="row">
+                    <label for="example1-phone" data-tid="elements_examples.form.phone_label">Phone</label>
+                    <input id="example1-phone" ng-model="user.phone" data-tid="elements_examples.form.phone_placeholder" type="tel" placeholder="(941) 555-0123" required="">
+                </div>
+            </fieldset>
+            <Br/>
+            <fieldset>
+                <div class="row">
+                    <div id="example1-card"></div>
+                </div>
+            </fieldset>
+            <Br/>
+            <Br/>
+            <button type="submit" data-tid="elements_examples.form.pay_button" ng-click="stripePay()">Pay $25</button>
+        </form>   
+    </div>
+    </section>
+    </main>
+  </div>
+
