@@ -23,6 +23,8 @@ angular.module('webApp.home', ['ngRoute','firebase'])
             console.log("User Login Success");
             $scope.errMsg = false;
             $window.localStorage.setItem('email', $scope.user.email);
+            var emailBox = document.getElementById("example1-email");
+            emailBox.value = $scope.user.email;
         }).catch(function(error){
             $scope.errMsg = true;
             $scope.errorMessage = error.message

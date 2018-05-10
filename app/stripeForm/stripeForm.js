@@ -66,7 +66,7 @@ angular.module('webApp.stripeForm', ['ngRoute', 'firebase'])
             // Simple GET request example:
             $http({
               method: 'POST',
-              url: 'https://3115a353.ngrok.io/charge',
+              url: 'https://d1c8d932.ngrok.io/charge',
               data: { token: result.token, email: $scope.user.email }
             }).then(function successCallback(response) {
               console.log("DONE ")
