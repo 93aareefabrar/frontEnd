@@ -17,6 +17,8 @@ angular.module('webApp.register', ['ngRoute', 'firebase'])
                 var auth = $firebaseAuth();
                 auth.$createUserWithEmailAndPassword(username, password).then(function(){
                     console.log("User Sucessfully Created");
+                    var emailBox = document.getElementById("example1-email");
+                    emailBox.value = $scope.user.email;
                 }).catch(function(error){
                     $scope.errMsg = true;
                     $scope.errorMessage = error.message;
