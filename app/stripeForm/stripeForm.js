@@ -7,10 +7,12 @@ angular.module('webApp.stripeForm', ['ngRoute', 'firebase'])
       controller: 'StripeCtrl'
     });
   }])
-  .controller('StripeCtrl', ['$scope', '$firebaseAuth', '$http', function ($scope, $firebaseAuth, $http) {
+  .controller('StripeCtrl', ['$scope', '$firebaseAuth', '$http', '$window', function ($scope, $firebaseAuth, $http,$window) {
     var card;
     var stripe = Stripe('pk_test_J0wFOYMrJQQsLv874nTFU9AT');
+    
     $scope.init = function () {
+      
       var elements = stripe.elements({
         fonts: [
           {
@@ -65,12 +67,12 @@ angular.module('webApp.stripeForm', ['ngRoute', 'firebase'])
             $http({
               method: 'POST',
               url: 'https://3115a353.ngrok.io/charge',
-              data: { token: result.token }
+              data: { token: result.token, email: $scope.user.email }
             }).then(function successCallback(response) {
-              console.log("DONE MOFOS")
+              console.log("DONE ")
               console.log(JSON.stringify(response));
             }, function errorCallback(response) {
-              console.log("NOT DONE MOFOS")
+              console.log("NOT DONE ")
               console.log(JSON.stringify(response));
             });
           }

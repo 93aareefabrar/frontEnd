@@ -11,7 +11,7 @@ angular.module('webApp.home', ['ngRoute','firebase'])
 
     });
 }])
-.controller('HomeCtrl', ['$scope', '$firebaseAuth', function($scope, $firebaseAuth){
+    .controller('HomeCtrl', ['$scope', '$window', '$firebaseAuth', function ($scope, $window, $firebaseAuth ){
 
     $scope.signIn = function(){
         var username = $scope.user.email;
@@ -22,6 +22,7 @@ angular.module('webApp.home', ['ngRoute','firebase'])
             
             console.log("User Login Success");
             $scope.errMsg = false;
+            $window.localStorage.setItem('email', $scope.user.email);
         }).catch(function(error){
             $scope.errMsg = true;
             $scope.errorMessage = error.message
